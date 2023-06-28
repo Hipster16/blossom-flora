@@ -52,7 +52,6 @@ function Thumbnails(): ReactNode {
   };
 
   const thumbsOptions: Options = {
-    type: 'slide',
     rewind: true,
     gap: '1rem',
     fixedWidth: 110,

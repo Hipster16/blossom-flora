@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "url": "./pexels-jess-bailey-designs-1167050.jpg",
+    "type": "type 1",
+    "name": "flower1"
+  },
+  {
+    "id": 2,
+    "url": "./pexels-jess-bailey-designs-1167050.jpg",
+    "type": "type 1",
+    "name": "flower2"
+  },
+  {
+    "id": 3,
+    "url": "./pexels-jess-bailey-designs-1167050.jpg",
+    "type": "type 1",
+    "name": "flower3"
+  },
+  {
+    "id": 4,
+    "url": "./pexels-antoni-shkraba-4612235.jpg",
+    "type": "type 2",
+    "name": "flower4"
+  },
+  {
+    "id": 5,
+    "url": "./pexels-antoni-shkraba-4612235.jpg",
+    "type": "type 2",
+    "name": "flower5"
+  },
+  {
+    "id": 6,
+    "url": "./pexels-antoni-shkraba-4612235.jpg",
+    "type": "type 2",
+    "name": "flower6"
+  },
+  {
+    "id": 7,
+    "url": "./pexels-enes-çelik-7748484.jpg",
+    "type": "type 3",
+    "name": "flower7"
+  },
+  {
+    "id": 8,
+    "url": "./pexels-enes-çelik-7748484.jpg",
+    "type": "type 3",
+    "name": "flower8"
+  },
+  {
+    "id": 9,
+    "url": "./pexels-enes-çelik-7748484.jpg",
+    "type": "type 3",
+    "name": "flower9"
+  }
+]
