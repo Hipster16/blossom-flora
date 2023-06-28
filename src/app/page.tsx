@@ -10,15 +10,21 @@ import gsap from "gsap";
 export default function Home() {
   const [filter, setFilter] = useState("");
   const wrapperRef = useRef(null);
+  const collectionRef = useRef(null);
 
   const handleFilterChange = (filterString: string, location: string) => {
     let same=false;
+    const time=0.5
+    setTimeout(() => {
+      setFilter(filterString);
+    }, 500);
     if(filterString === filter) same=true
-    setFilter(filterString);
-    gsap.to(wrapperRef.current, {x: location, duration: 1, ease: "ease.InOut"})
+    gsap.to(wrapperRef.current, {x: location, duration: time*2, ease: "ease.InOut"})
     if(!same) {
-      gsap.to(wrapperRef.current, {scaleX: "140%", duration: 0.5, ease: "ease.In"})
-      gsap.to(wrapperRef.current, {scaleX: "100%", duration: 0.5, ease: "ease.Out", delay: 0.5})
+      gsap.to(wrapperRef.current, {scaleX: "140%", duration: time, ease: "ease.In"})
+      gsap.to(wrapperRef.current, {scaleX: "100%", duration: time, ease: "ease.Out", delay: 0.5})
+      gsap.to(collectionRef.current, {opacity: 0, scale: 1.05, ease: "ease.In",  duration: time*2 })
+      gsap.to(collectionRef.current, {opacity: 1, scale: 1, ease: "ease.Out", duration: time*2, delay: time })
     }
   };
   return (
@@ -132,7 +138,7 @@ export default function Home() {
             Gifts
           </button>
         </div>
-        <div className="mt-10 max-w-[75%] flex flex-wrap mx-auto justify-between gap-6">
+        <div ref={collectionRef} className="mt-10 min-h-[100vh] max-w-[75%] flex flex-wrap mx-auto justify-center gap-[5vw]">
           {product.map((Item) => {
             console.log(filter);
             if (filter === "")
