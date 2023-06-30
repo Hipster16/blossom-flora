@@ -8,7 +8,7 @@ type catalogProps = {
 
 function Catalog(props: catalogProps) {
   return (
-    <div className="relative group w-[400px] min-w-[400px] min-h-[400px] h-[400px] rounded-[30px] overflow-hidden">
+    <div className="relative group w-[350px] min-w-[350px] min-h-[350px] h-[350px] rounded-[30px] overflow-hidden">
       <img
         src={props.url}
         alt=""

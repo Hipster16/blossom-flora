@@ -7,7 +7,10 @@ import Thumbnails from "@/components/Thumbnails";
 import Collection from "@/components/Collection";
 import gsap from "gsap";
 
+
+
 export default function Home() {
+
   const [filter, setFilter] = useState("");
   const wrapperRef = useRef(null);
   const collectionRef = useRef(null);
@@ -27,8 +30,10 @@ export default function Home() {
       gsap.to(collectionRef.current, {opacity: 1, scale: 1, ease: "ease.Out", duration: time*2, delay: time })
     }
   };
+
+
   return (
-    <main className=" ">
+    <main className="overflow-x-hidden ">
       <nav className="flex w-full flex-col p-10 justify-between bg-slate-100 rounded-[10px]">
         <div className="flex w-full text-6xl text-center items-center justify-center font-caslon">
           Blossom Flora
@@ -44,20 +49,22 @@ export default function Home() {
             SERVICES
           </div>
           <div className="hover:font-medium hover:cursor-pointer transition-all">
-            CONTACT US
+            CONTACT
           </div>
         </div>
       </nav>
       <Slider />
 
-      <section id="catalog" className="mt-12">
+      <section id="catalog" className="mt-12 ease-in-out duration-1000 transition-all ">
         <div className="flex flex-col items-center">
           <h1 className="text-5xl font-semibold font-caslon">Best Sellers</h1>
           <div className="font-light my-5 text-sm">VIEW ALL</div>
-          <div className=" flex w-full  my-10 justify-center gap-10 flex-wrap">
+          <div className=" flex w-full pl-[1200px] md:pl-0 my-10  justify-center gap-10  overflow-scroll p-5 md:flex-wrap">
+            
+          
             <Catalog
               url="/pexels-enes-çelik-7748484.jpg"
-              name="Item name"
+              name="Item name1"
               description="Here comes the description"
             />
             <Catalog
@@ -75,18 +82,19 @@ export default function Home() {
               name="Item name"
               description="Here comes the description"
             />
+            
           </div>
         </div>
       </section>
-      <section id="about" className="w-full flex mt-8">
-        <div className="flex justify-center w-[50%] h-full items-center">
+      <section id="about" className="w-full flex flex-col md:flex-row mt-8">
+        <div className="flex justify-center  md:w-[50%] h-full items-center">
           <Thumbnails />
         </div>
-        <div className="flex flex-col items-center w-[50%]">
+        <div className="flex flex-col items-center md:w-[50%]">
           <div className="my-[50px] text-black text-6xl font-caslon">
             About Us
           </div>
-          <div className=" text-2xl font-light items-center w-[80%] mx-auto">
+          <div className=" text-2xl font-light items-center w-[90%] md:w-[80%] mx-auto">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industrys standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
