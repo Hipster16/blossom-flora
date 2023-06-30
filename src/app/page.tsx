@@ -7,19 +7,27 @@ import Thumbnails from "@/components/Thumbnails";
 import Collection from "@/components/Collection";
 import gsap from "gsap";
 
+
+
 export default function Home() {
 
   const [filter, setFilter] = useState("");
   const wrapperRef = useRef(null);
+  const collectionRef = useRef(null);
 
   const handleFilterChange = (filterString: string, location: string) => {
     let same=false;
+    const time=0.5
+    setTimeout(() => {
+      setFilter(filterString);
+    }, 500);
     if(filterString === filter) same=true
-    setFilter(filterString);
-    gsap.to(wrapperRef.current, {x: location, duration: 1, ease: "ease.InOut"})
+    gsap.to(wrapperRef.current, {x: location, duration: time*2, ease: "ease.InOut"})
     if(!same) {
-      gsap.to(wrapperRef.current, {scaleX: "140%", duration: 0.2, ease: "ease.In"})
-      gsap.to(wrapperRef.current, {scaleX: "100%", duration: 0.2, ease: "ease.Out", delay: 0.5})
+      gsap.to(wrapperRef.current, {scaleX: "140%", duration: time, ease: "ease.In"})
+      gsap.to(wrapperRef.current, {scaleX: "100%", duration: time, ease: "ease.Out", delay: 0.5})
+      gsap.to(collectionRef.current, {opacity: 0, scale: 1.05, ease: "ease.In",  duration: time*2 })
+      gsap.to(collectionRef.current, {opacity: 1, scale: 1, ease: "ease.Out", duration: time*2, delay: time })
     }
   };
 
@@ -41,13 +49,13 @@ export default function Home() {
             SERVICES
           </div>
           <div className="hover:font-medium hover:cursor-pointer transition-all">
-            CONTACT US
+            CONTACT
           </div>
         </div>
       </nav>
       <Slider />
 
-      <section id="catalog" className="mt-12">
+      <section id="catalog" className="mt-12 ease-in-out duration-1000 transition-all ">
         <div className="flex flex-col items-center">
           <h1 className="text-5xl font-semibold font-caslon">Best Sellers</h1>
           <div className="font-light my-5 text-sm">VIEW ALL</div>
@@ -86,7 +94,7 @@ export default function Home() {
           <div className="my-[50px] text-black text-6xl font-caslon">
             About Us
           </div>
-          <div className=" text-2xl font-light items-center w-full md:w-[80%] mx-auto">
+          <div className=" text-2xl font-light items-center w-[90%] md:w-[80%] mx-auto">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industrys standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
@@ -138,7 +146,7 @@ export default function Home() {
             Gifts
           </button>
         </div>
-        <div className="mt-10 max-w-[75%] flex flex-wrap mx-auto justify-between gap-6 ease-in-out duration-700 transition-all">
+        <div ref={collectionRef} className="mt-10 min-h-[100vh] max-w-[75%] flex flex-wrap mx-auto justify-center gap-[5vw]">
           {product.map((Item) => {
             console.log(filter);
             if (filter === "")
