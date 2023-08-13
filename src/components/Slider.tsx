@@ -15,15 +15,15 @@ function Slider() {
       }}
       >
         <SplideSlide>
-          <img src="/pexels-brigita-korsakiene-7752204.jpg" alt="Image 1"  className='w-full h-[400px] object-cover overflow-hidden'/ >
+          <img src="/carousal (1).png" alt="Image 1"  className='w-full h-[100%]  object-contain overflow-hidden'/ >
         </SplideSlide>
         <SplideSlide>
-          <img src="/pexels-elizaveta-mitenkova-15947013.jpg" alt="Image 2"  className='w-full h-[400px] object-cover overflow-hidden' />
+          <img src="/carousal (2).png" alt="Image 2"  className='w-full h-[100%]  object-contain overflow-hidden' />
         </SplideSlide>
         <SplideSlide>
-          <img src="/pexels-enes-çelik-7748484.jpg" alt="Image 2"  className='w-full h-[400px] object-cover overflow-hidden' />
+          <img src="/carousal (1).png" alt="Image 2"  className='w-full  h-[100%] object-contain overflow-hidden' />
         </SplideSlide>
-       
+      
       </Splide>
       </div>
     );

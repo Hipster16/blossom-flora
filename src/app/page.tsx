@@ -33,12 +33,12 @@ export default function Home() {
 
 
   return (
-    <main className="overflow-x-hidden ">
-      <nav className="flex w-full flex-col p-10 justify-between bg-slate-100 rounded-[10px]">
-        <div className="flex w-full text-6xl text-center items-center justify-center font-caslon">
+    <main className="overflow-x-hidden bg-slate-100 ">
+      <nav className="flex w-full flex-col p-5 justify-between  rounded-[10px]">
+        <div className="flex w-full text-4xl md:text-6xl text-center items-center justify-center font-caslon">
           Blossom Flora
         </div>
-        <div className="flex w-full text-2xl font-thin items-center text-center justify-center gap-4 mt-3 ">
+        <div className="hidden md:flex w-full text-2xl font-thin items-center text-center justify-center gap-4 mt-3 ">
           <div className="hover:font-medium hover:cursor-pointer transition-all">
             HOME
           </div>
@@ -57,9 +57,9 @@ export default function Home() {
 
       <section id="catalog" className="mt-12 ease-in-out duration-1000 transition-all ">
         <div className="flex flex-col items-center">
-          <h1 className="text-5xl font-semibold font-caslon">Best Sellers</h1>
-          <div className="font-light my-5 text-sm">VIEW ALL</div>
-          <div className=" flex w-full pl-[1200px] md:pl-0 my-10  justify-center gap-10  overflow-scroll p-5 md:flex-wrap">
+          <h1 className="md:text-5xl text-3xl  font-caslon">Best Sellers</h1>
+          <div className="font-light my-1 text-sm">VIEW ALL</div>
+          <div className=" flex w-full p-5 justify-center gap-10  md:overflow-hidden overflow-scroll md:flex-wrap">
             
           
             <Catalog
@@ -79,7 +79,7 @@ export default function Home() {
             />
             <Catalog
               url="/pexels-enes-çelik-7748484.jpg"
-              name="Item name"
+              name="Item name4"
               description="Here comes the description"
             />
             
@@ -91,10 +91,10 @@ export default function Home() {
           <Thumbnails />
         </div>
         <div className="flex flex-col items-center md:w-[50%]">
-          <div className="my-[50px] text-black text-6xl font-caslon">
+          <div className="my-[50px] text-black md:text-6xl text-3xl font-caslon">
             About Us
           </div>
-          <div className=" text-2xl font-light items-center w-[90%] md:w-[80%] mx-auto">
+          <div className=" text-lg md:text-2xl font-light items-center w-[90%] md:w-[80%] mx-auto">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industrys standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
@@ -109,7 +109,7 @@ export default function Home() {
       </section>
 
       <section id="collections">
-        <div className="mt-[80px] text-center text-black text-6xl font-caslon">
+        <div className="mt-[80px] text-center text-black text-3xl md:text-6xl font-caslon">
           Collections
         </div>
         <div className="relative w-[60%] mx-auto flex justify-between gap-8 mt-10 bg-gray-100 p-1 rounded-[40px]">

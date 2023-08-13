@@ -50,6 +50,18 @@ function Thumbnails(): ReactNode {
     width:'40rem',
     arrows:false
   };
+  const mainOptions1: Options = {
+    type: 'loop',
+    autoplay: true,
+    interval: 3000,
+    perPage: 1,
+    perMove: 1,
+    gap: '1rem',
+    pagination: false,
+    height:'20rem',
+    width:'30rem',
+    arrows:false
+  };
 
   const thumbsOptions: Options = {
     rewind: true,
@@ -67,11 +79,17 @@ function Thumbnails(): ReactNode {
       <Splide
         options={mainOptions}
         ref={mainRef}
-       
+        className="md:flex hidden"
       >
         {renderSlides()}
       </Splide>
-
+      <Splide
+        options={mainOptions1}
+        ref={mainRef}
+        className="flex md:hidden"
+      >
+        {renderSlides()}
+      </Splide>
       <Splide
         options={thumbsOptions}
         ref={thumbsRef}
