@@ -8,7 +8,13 @@ interface Slide {
   alt: string;
 }
 
-function Thumbnails(): ReactNode {
+type ThumbnailProps = {
+  url1: string;
+  url2: string;
+  url3: string;
+};
+
+function Thumbnails(props:ThumbnailProps): ReactNode {
   const mainRef = useRef<Splide | null>(null);
   const thumbsRef = useRef<Splide | null>(null);
 
@@ -19,13 +25,12 @@ function Thumbnails(): ReactNode {
   }, []);
 
   const generateSlides = (): Slide[] => {
-    // Generate slides data
-    // Replace this with your own logic to generate the slides
+    
     return [
-      { src: '/pexels-brigita-korsakiene-7752204.jpg', alt: 'Slide 1' },
-      { src: '/pexels-elizaveta-mitenkova-15947013.jpg', alt: 'Slide 2' },
-      { src: '/pexels-enes-çelik-7748484.jpg', alt: 'Slide 3' },
-      // Add more slides
+      { src: props.url1, alt: 'Slide 1' },
+      { src: props.url2, alt: 'Slide 2' },
+      { src: props.url3, alt: 'Slide 3' },
+   
     ];
   };
 

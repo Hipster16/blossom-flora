@@ -59,9 +59,8 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <h1 className="md:text-5xl text-3xl  font-caslon">Best Sellers</h1>
           <div className="font-light my-1 text-sm">VIEW ALL</div>
-          <div className=" flex w-full p-5 justify-center gap-10  md:overflow-hidden overflow-scroll md:flex-wrap">
+          <div className=" md:flex hidden w-full p-5 justify-center gap-10  md:overflow-hidden overflow-scroll md:flex-wrap">
             
-          
             <Catalog
               url="/pexels-enes-çelik-7748484.jpg"
               name="Item name1"
@@ -87,9 +86,16 @@ export default function Home() {
         </div>
       </section>
       <section id="about" className="w-full flex flex-col md:flex-row mt-8">
-        <div className="flex justify-center  md:w-[50%] h-full items-center">
-          <Thumbnails />
+       {/* Abouts Us Desktop */}
+        <div className="md:flex hidden justify-center  md:w-[50%] h-full items-center p-10">
+          <Thumbnails url1="/pexels-brigita-korsakiene-7752204.jpg" url2="/pexels-elizaveta-mitenkova-15947013.jpg" url3="/pexels-enes-çelik-7748484.jpg"/>
         </div>
+
+        {/* Mobile View Best Seller. */}
+        <div className="md:hidden flex justify-center  md:w-[50%] h-full items-center px-5">
+          <Thumbnails url1="/pexels-enes-çelik-7748484.jpg" url2="/pexels-enes-çelik-7748484.jpg" url3="/pexels-enes-çelik-7748484.jpg"/>
+        </div>
+
         <div className="flex flex-col items-center md:w-[50%]">
           <div className="my-[50px] text-black md:text-6xl text-3xl font-caslon">
             About Us
