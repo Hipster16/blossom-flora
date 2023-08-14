@@ -6,31 +6,52 @@ import Catalog from "../components/Catalog";
 import Thumbnails from "@/components/Thumbnails";
 import Collection from "@/components/Collection";
 import gsap from "gsap";
-
-
+import Collections from "@/components/Collections";
 
 export default function Home() {
-
   const [filter, setFilter] = useState("");
   const wrapperRef = useRef(null);
   const collectionRef = useRef(null);
 
   const handleFilterChange = (filterString: string, location: string) => {
-    let same=false;
-    const time=0.5
+    let same = false;
+    const time = 0.5;
     setTimeout(() => {
       setFilter(filterString);
     }, 500);
-    if(filterString === filter) same=true
-    gsap.to(wrapperRef.current, {x: location, duration: time*2, ease: "ease.InOut"})
-    if(!same) {
-      gsap.to(wrapperRef.current, {scaleX: "140%", duration: time, ease: "ease.In"})
-      gsap.to(wrapperRef.current, {scaleX: "100%", duration: time, ease: "ease.Out", delay: 0.5})
-      gsap.to(collectionRef.current, {opacity: 0, scale: 1.05, ease: "ease.In",  duration: time*2 })
-      gsap.to(collectionRef.current, {opacity: 1, scale: 1, ease: "ease.Out", duration: time*2, delay: time })
+    if (filterString === filter) same = true;
+    gsap.to(wrapperRef.current, {
+      x: location,
+      duration: time * 2,
+      ease: "ease.InOut",
+    });
+    if (!same) {
+      gsap.to(wrapperRef.current, {
+        scaleX: "140%",
+        duration: time,
+        ease: "ease.In",
+      });
+      gsap.to(wrapperRef.current, {
+        scaleX: "100%",
+        duration: time,
+        ease: "ease.Out",
+        delay: 0.5,
+      });
+      gsap.to(collectionRef.current, {
+        opacity: 0,
+        scale: 1.05,
+        ease: "ease.In",
+        duration: time * 2,
+      });
+      gsap.to(collectionRef.current, {
+        opacity: 1,
+        scale: 1,
+        ease: "ease.Out",
+        duration: time * 2,
+        delay: time,
+      });
     }
   };
-
 
   return (
     <main className="overflow-x-hidden bg-slate-100 ">
@@ -55,12 +76,14 @@ export default function Home() {
       </nav>
       <Slider />
 
-      <section id="catalog" className="mt-12 ease-in-out duration-1000 transition-all ">
+      <section
+        id="catalog"
+        className="mt-12 ease-in-out duration-1000 transition-all "
+      >
         <div className="flex flex-col items-center">
           <h1 className="md:text-5xl text-3xl  font-caslon">Best Sellers</h1>
           <div className="font-light my-1 text-sm">VIEW ALL</div>
           <div className=" md:flex hidden w-full p-5 justify-center gap-10  md:overflow-hidden overflow-scroll md:flex-wrap">
-            
             <Catalog
               url="/pexels-enes-çelik-7748484.jpg"
               name="Item name1"
@@ -81,19 +104,26 @@ export default function Home() {
               name="Item name4"
               description="Here comes the description"
             />
-            
           </div>
         </div>
       </section>
       <section id="about" className="w-full flex flex-col md:flex-row mt-8">
-       {/* Abouts Us Desktop */}
+        {/* Abouts Us Desktop */}
         <div className="md:flex hidden justify-center  md:w-[50%] h-full items-center p-10">
-          <Thumbnails url1="/pexels-brigita-korsakiene-7752204.jpg" url2="/pexels-elizaveta-mitenkova-15947013.jpg" url3="/pexels-enes-çelik-7748484.jpg"/>
+          <Thumbnails
+            url1="/pexels-brigita-korsakiene-7752204.jpg"
+            url2="/pexels-elizaveta-mitenkova-15947013.jpg"
+            url3="/pexels-enes-çelik-7748484.jpg"
+          />
         </div>
 
         {/* Mobile View Best Seller. */}
         <div className="md:hidden flex justify-center  md:w-[50%] h-full items-center px-5">
-          <Thumbnails url1="/pexels-enes-çelik-7748484.jpg" url2="/pexels-enes-çelik-7748484.jpg" url3="/pexels-enes-çelik-7748484.jpg"/>
+          <Thumbnails
+            url1="/pexels-enes-çelik-7748484.jpg"
+            url2="/pexels-enes-çelik-7748484.jpg"
+            url3="/pexels-enes-çelik-7748484.jpg"
+          />
         </div>
 
         <div className="flex flex-col items-center md:w-[50%]">
@@ -115,6 +145,22 @@ export default function Home() {
       </section>
 
       <section id="collections">
+        <div className="mt-[80px] text-center text-black text-3xl md:text-6xl font-caslon">
+          Collections
+        </div>
+        <div className="flex md:w-[75%] mx-auto p-5 justify-center gap-10  md:overflow-hidden overflow-scroll flex-wrap">
+          <Collections url="/pexels-enes-çelik-7748484.jpg" name="Item name1" />
+          <Collections url="/pexels-enes-çelik-7748484.jpg" name="Item name1" />
+          <Collections url="/pexels-enes-çelik-7748484.jpg" name="Item name1" />
+          <Collections url="/pexels-enes-çelik-7748484.jpg" name="Item name1" />
+          <Collections url="/pexels-enes-çelik-7748484.jpg" name="Item name1" />
+          <Collections url="/pexels-enes-çelik-7748484.jpg" name="Item name1" />
+          <Collections url="/pexels-enes-çelik-7748484.jpg" name="Item name1" />
+          <Collections url="/pexels-enes-çelik-7748484.jpg" name="Item name1" />
+        </div>
+      </section>
+
+      {/* <section id="collections">
         <div className="mt-[80px] text-center text-black text-3xl md:text-6xl font-caslon">
           Collections
         </div>
@@ -161,7 +207,7 @@ export default function Home() {
               return <Collection url={Item.url} name={Item.name} />;
           })}
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
