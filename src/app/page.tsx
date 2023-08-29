@@ -7,6 +7,7 @@ import Thumbnails from "@/components/Thumbnails";
 import Collection from "@/components/Collection";
 import gsap from "gsap";
 import Collections from "@/components/Collections";
+import Image from "next/image";
 
 export default function Home() {
   const [filter, setFilter] = useState("");
@@ -54,24 +55,26 @@ export default function Home() {
   };
 
   return (
-    <main className="overflow-x-hidden bg-slate-100 ">
-      <nav className="flex w-full flex-col p-5 justify-between  rounded-[10px]">
-        <div className="flex w-full text-4xl md:text-6xl text-center items-center justify-center font-caslon">
-          Blossom Flora
+    <main className="overflow-x-hidden bg-slate-50 ">
+      <nav className="flex w-[95%] mx-auto flex-col justify-between  rounded-[10px] p-[20px] md:p-0">
+        <div className="flex w-full  justify-between  rounded-[10px]">
+          <div className="md:flex pt-3 hidden justify-start">
+            <Image src="/logo.png" alt="Logo" width={120} height={120} />
+          </div>
+
+          <div className="flex flex-col md:w-full text-4xl md:text-6xl text-center items-center justify-center font-caslon">
+            <div className="md:flex hidden text-3xl ">The </div>Blossom Flora
+          </div>
+          <div className="flex gap-4 items-center h-full my-auto">
+            <Image src="/search.svg" alt="Logo" width={30} height={30} />
+            <Image src="/cart.png" alt="Logo" width={30} height={30} />
+          </div>
         </div>
-        <div className="hidden md:flex w-full text-2xl font-thin items-center text-center justify-center gap-4 mt-3 ">
-          <div className="hover:font-medium hover:cursor-pointer transition-all">
-            HOME
-          </div>
-          <div className="hover:font-medium hover:cursor-pointer transition-all">
-            SHOP
-          </div>
-          <div className="hover:font-medium hover:cursor-pointer transition-all">
-            SERVICES
-          </div>
-          <div className="hover:font-medium hover:cursor-pointer transition-all">
-            CONTACT
-          </div>
+        <div className="hidden md:flex w-full text-2xl font-light items-center text-center justify-center gap-8  pb-5">
+          <div className=" hover:cursor-pointer transition-all">Home</div>
+          <div className=" hover:cursor-pointer transition-all">Order Now</div>
+          <div className=" hover:cursor-pointer transition-all">Services</div>
+          <div className=" hover:cursor-pointer transition-all">Contact Us</div>
         </div>
       </nav>
       <Slider />
