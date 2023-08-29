@@ -16,11 +16,16 @@ type ThumbnailProps = {
 
 function Thumbnails(props:ThumbnailProps): ReactNode {
   const mainRef = useRef<Splide | null>(null);
+  const mainRefMob = useRef<Splide | null>(null);
   const thumbsRef = useRef<Splide | null>(null);
+  
 
   useEffect(() => {
     if (mainRef.current && thumbsRef.current && thumbsRef.current.splide) {
       mainRef.current.sync(thumbsRef.current.splide);
+    }
+    if (mainRefMob.current && thumbsRef.current && thumbsRef.current.splide) {
+      mainRefMob.current.sync(thumbsRef.current.splide);
     }
   }, []);
 
@@ -83,7 +88,7 @@ function Thumbnails(props:ThumbnailProps): ReactNode {
     <div className="wrapper">
       <Splide
         options={mainOptions}
-        ref={mainRef}
+        ref={mainRefMob}
         className="md:flex hidden"
       >
         {renderSlides()}

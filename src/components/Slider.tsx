@@ -11,7 +11,10 @@ function Slider() {
         type: 'loop',
         autoplay: true,
         interval: 2000, 
-        arrows: false,
+        arrows: true,
+      
+        lazyLoad:true,
+        
       }}
       >
         <SplideSlide>
